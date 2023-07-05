@@ -17,7 +17,9 @@ class LoginScreen : AppCompatActivity() {
         usernameController = findViewById(R.id.usernameController)
         passwordController = findViewById(R.id.passwordController)
 
-        supportActionBar?.title="Halaman Login"
+        supportActionBar?.apply {
+            title = "Halaman Login"
+        }
 
         findViewById<MaterialButton>(R.id.btnRegister).setOnClickListener {
             Get.to(this,RegisterScreen::class.java)
@@ -26,9 +28,7 @@ class LoginScreen : AppCompatActivity() {
         findViewById<MaterialButton>(R.id.btnLogin).setOnClickListener {
             onLogin()
         }
-
     }
-
     private fun onLogin() {
         val savedUsername = getSavedUsername()
         val savedPassword = getSavedPassword()
